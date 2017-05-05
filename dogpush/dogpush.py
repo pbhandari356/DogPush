@@ -289,6 +289,7 @@ def command_mute(args):
     for monitor in local_monitors.values():
         if monitor['mute_when']:
             remote = remote_monitors[monitor['name']]
+            print _pretty_yaml(remote)
             if remote['is_silenced']:
                 print "Alert '%s' is already muted. Skipping." % monitor['name']
                 continue
